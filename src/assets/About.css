@@ -1,0 +1,179 @@
+#AboutSection {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+.about-container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
+  gap: 60px;
+  align-items: center;
+}
+
+/* IMAGE SIDE */
+.about-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* TEXT SIDE */
+.about-content {
+  max-width: 540px;
+  margin-left: auto;
+}
+
+.about-eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.about-text {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  #AboutSection {
+    padding: 60px 0;
+  }
+
+  .about-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .about-content {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-container {
+    width: 92%;
+  }
+
+  .about-title {
+    font-size: 1.45rem;
+  }
+
+  .about-text {
+    font-size: 0.92rem;
+  }
+}
+
+/* ACTION BUTTONS */
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  border-radius: 999px;
+  border: 1px solid transparent;
+
+  transition: background-color 0.18s ease, color 0.18s ease,
+    border-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+/* Asosiy tugma: mahsulotlar */
+.btn-primary {
+  background-color: #0f766e;
+  color: #f9fafb;
+  border-color: #0f766e;
+  box-shadow: 0 14px 30px rgba(15, 118, 110, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: #115e59;
+  border-color: #115e59;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(15, 118, 110, 0.45);
+}
+
+/* Ikkinchi tugma: kontakt */
+.btn-secondary {
+  background-color: transparent;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.btn-secondary:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+/* Pastdagi izoh */
+.about-note {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.about-note a {
+  color: #0f766e;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+
+.about-note a:hover {
+  border-color: #0f766e;
+}
+
+/* Mobil uchun tugmalar */
+@media (max-width: 640px) {
+  .about-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: auto;
+  }
+}

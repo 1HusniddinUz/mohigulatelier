@@ -1,0 +1,85 @@
+/* Wrapper */
+#HeroSection {
+  width: 100%;
+  padding: 40px 0 60px;
+  background-color: #f9fafb; /* juda engil kulrang fon */
+}
+
+/* Container agar Navbar'dagi bilan bir xil bo'lsa, shuni ishlatasan */
+#HeroSection .container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* GRID */
+#HeroSection .main-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.hero-card {
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  /*qirralito‘rtburchak*/
+  border-radius: 0;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  transition: transform 0.5s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+  -webkit-transition: transform 0.5s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+  -moz-transition: transform 0.5s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+  -ms-transition: transform 0.5s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+  -o-transition: transform 0.5s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.hero-card:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+  opacity: 0.9;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  border-color: #d1d5db;
+}
+
+/* Rasm qismi */
+.hero-card-image {
+  width: 100%;
+  height: 80vh;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.hero-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Matn qismi */
+.hero-card-body {
+  margin-top: 12px;
+}
+
+.hero-card-body h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: #111827;
+}
+
+.hero-card-body p {
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
