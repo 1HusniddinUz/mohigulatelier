@@ -26,6 +26,9 @@ const marketplaces = [
     link: "#",
     tag: "Tez orada",
   },
+
+
+  
   {
     id: "yandex",
     name: "YANDEX MARKET",
