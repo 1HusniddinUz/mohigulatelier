@@ -23,19 +23,16 @@ const marketplaces = [
     description:
       "Rossiya bozoriga yo‘naltirilgan kolleksiya: ayollar kepkalari va kundalik aksessuarlar uchun tayyor vitrina.",
     image: ozonLogo,
-    link: "#",
-    tag: "Tez orada",
+    link: "https://uz.ozon.com/product/sumka-3186635907/?oos_search=false",
+    tag: "Online do‘kon",
   },
-
-
-  
   {
     id: "yandex",
     name: "YANDEX MARKET",
     description:
       "Sharqona kashtali kepkalar uchun alohida do‘kon sahifasi. Kepka va boshqa mahsulotlar bosqichma-bosqich joylashtiriladi.",
     image: yandexLogo,
-    link: "https://market.yandex.uz/business--husniddin/216503443?generalContext=t%3DshopInShop%3Bi%3D1%3Bbi%3D216503443%3B&rs=eJwzkn7ByPiJUZSDUWDhIVYJBo2eo6wa7189YNZYdYQVAH_UCdY%2C&searchContext=sins_ctx",
+    link: "https://market.yandex.uz/card/zhenskaya-kepka-s-vyshivkoy-v-vostochnom-stile-stilnaya-kepka-iz-plotnogo-tekstilya-ukrashennaya-yarkoy-vostochnoy-vyshivkoy/4814382078?do-waremd5=BAW8wpOsuqQKs3KRSu7SNA&businessId=216503443&ogV=-7https://market.yandex.uz/business--husniddin/216503443?generalContext=t%3DshopInShop%3Bi%3D1%3Bbi%3D216503443%3B&rs=eJwzkn7ByPiJUZSDUWDhIVYJBo2eo6wa7189YNZYdYQVAH_UCdY%2C&searchContext=sins_ctx",
     extraLink:
       "https://market.yandex.uz/card/zhenskaya-kepka-s-vyshivkoy-v-vostochnom-stile-stilnaya-kepka-iz-plotnogo-tekstilya-ukrashennaya-yarkoy-vostochnoy-vyshivkoy/4814382078?do-waremd5=BAW8wpOsuqQKs3KRSu7SNA&businessId=216503443&ogV=-7",
     tag: "Online do‘kon",
@@ -46,8 +43,8 @@ const marketplaces = [
     description:
       "Markaziy Osiyo va Rossiya xaridorlari uchun kapsul kolleksiya. Platformaga tayyorlanayotgan pozitsiyalar.",
     image: wildberriesLogo,
-    link: "#",
-    tag: "Tez orada",
+    link: "https://www.wildberries.ru/catalog/682102776/detail.aspx?targetUrl=GP",
+    tag: "Faol joylashtirilgan",
   },
 ];
 
@@ -57,11 +54,13 @@ const Marketplaces = () => {
       <div className="marketplaces-container">
         <header className="marketplaces-header">
           <p className="marketplaces-eyebrow">Online savdo maydonchalari</p>
-          <h1 className="marketplaces-title">Kashta mahsulotlar qayerda sotiladi?</h1>
+          <h1 className="marketplaces-title">
+            Kashta mahsulotlar qayerda sotiladi?
+          </h1>
           <p className="marketplaces-subtitle">
             Mohigulning kepkalari va aksessuarlari bir nechta yirik marketplace
-            platformalarida joylashtirilgan. Quyidagi sahifalar orqali kolleksiyani
-            ko‘rishingiz va buyurtma qilishingiz mumkin.
+            platformalarida joylashtirilgan. Quyidagi sahifalar orqali
+            kolleksiyani ko‘rishingiz va buyurtma qilishingiz mumkin.
           </p>
         </header>
 
@@ -75,7 +74,9 @@ const Marketplaces = () => {
               <div className="marketplace-body">
                 <div className="marketplace-top">
                   <h2>{item.name}</h2>
-                  {item.tag && <span className="marketplace-tag">{item.tag}</span>}
+                  {item.tag && (
+                    <span className="marketplace-tag">{item.tag}</span>
+                  )}
                 </div>
 
                 <p className="marketplace-text">{item.description}</p>
@@ -98,7 +99,7 @@ const Marketplaces = () => {
                     </button>
                   )}
 
-                  {item.extraLink && (
+                  {/* {item.extraLink && (
                     <a
                       href={item.extraLink}
                       target="_blank"
@@ -107,7 +108,7 @@ const Marketplaces = () => {
                     >
                       Kepka kartasini ko‘rish
                     </a>
-                  )}
+                  )} */}
                 </div>
               </div>
             </article>

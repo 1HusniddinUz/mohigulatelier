@@ -1,11 +1,22 @@
+import { useState } from "react";
 import { FaTelegramPlane, FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "../../assets/Navbar.css";
-
+import logo from "../../assets/images/logo.png"
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      <div className="container">
+      <div className="container nav-container">
         {/* TOP LINE */}
         <div className="nav-top">
           <div className="social-links">
@@ -26,24 +37,38 @@ const Navbar = () => {
           </div>
 
           <div className="logo-box">
-            <h1>MOHINUR ATELIER</h1>
+            <img src={logo} alt="MOHIGUL ATELIER LOGO" />
           </div>
 
-          <div className="lang-provider">
-            <select>
-              <option value="uz">O'zbek</option>
-              <option value="ru">Русский</option>
-              <option value="en">English</option>
-            </select>
+          <div className="nav-right">
+            <div className="lang-provider">
+              <select>
+                <option value="uz">O'zbek</option>
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+
+            {/* HAMBURGER BUTTON (faqat mobilda ko'rinadi) */}
+            <button
+              className={`nav-toggle ${isOpen ? "open" : ""}`}
+              onClick={handleToggle}
+              aria-label="Toggle navigation"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
 
         {/* BOTTOM MENU */}
-        <div className="nav-bottom">
+        <div className={`nav-bottom ${isOpen ? "open" : ""}`}>
           <ul>
             <li>
               <NavLink
                 to="/"
+                onClick={handleClose}
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
@@ -54,6 +79,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/products"
+                onClick={handleClose}
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
@@ -63,7 +89,19 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
+                to="/marketplaces"
+                onClick={handleClose}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                Marketplaces
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/about"
+                onClick={handleClose}
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
@@ -74,6 +112,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/contact"
+                onClick={handleClose}
                 className={({ isActive }) =>
                   isActive ? "nav-link active" : "nav-link"
                 }
