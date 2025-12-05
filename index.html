@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,10 +12,138 @@
       rel="stylesheet"
     />
 
-    <title>kashtahouse</title>
+    <!-- ========================================================= -->
+    <!-- PRIMARY SEO TAGS — MOHIGUL ATELIER | Kashtachilik Studiyasi -->
+    <!-- ========================================================= -->
+    <title>
+      MOHIGUL ATELIER | Suzani, Milliy Bosh Kiyimlar, Sumkalar va Kashtachilik
+      Buyumlari
+    </title>
+
+    <meta
+      name="title"
+      content="MOHIGUL ATELIER | Suzani, Milliy bosh kiyimlar, sumkalar va kashtachilik buyumlari"
+    />
+    <meta
+      name="description"
+      content="MOHIGUL ATELIER — milliy kashtachilik buyumlari: kepkalar, suzane, milliy bosh kiyimlar, sumkalar va eksklyuziv qo‘l mehnati bilan tayyorlangan aksessuarlar. Buxoro mahorati va nafis an’ana uyg‘unligi."
+    />
+    <meta
+      name="keywords"
+      content="mohigul atelier, moxigul, kashtachilik, suzani, suzanellar, bosh kiyimlar, kepka, sumkalar, milliy kiyimlar, handmade buxoro, hunarmandchilik, beo'zbekiston suzani"
+    />
+    <meta name="author" content="KHALIMOV | t.me/xusni_axi" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#B47CFF" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mohigulatelier.uz/" />
+
+    <!-- ========================= -->
+    <!-- OPEN GRAPH (FACEBOOK)     -->
+    <!-- ========================= -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MOHIGUL ATELIER" />
+    <meta property="og:url" content="https://mohigulatelier.uz/" />
+    <meta
+      property="og:title"
+      content="MOHIGUL ATELIER | Milliy kashtachilik buyumlari"
+    />
+    <meta
+      property="og:description"
+      content="Eksklyuziv qo‘l mehnati mahsulotlari: suzani, kepka, milliy bosh kiyimlar, sumkalar va kashtachilik buyumlari — Buxorolik mahorat bilan."
+    />
+
+    <!-- PREVIEW IMAGE (1200x630 recommended) -->
+    <!-- TODO: PREVIEW IMAGE URL KIRITING — masalan: /images/preview.png -->
+    <meta property="og:image" content="./public/preview.png" />
+
+    <!-- ========================= -->
+    <!-- TWITTER CARD              -->
+    <!-- ========================= -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mohigulatelier.uz/" />
+    <meta
+      name="twitter:title"
+      content="MOHIGUL ATELIER | Kashtachilik studiyasi"
+    />
+    <meta
+      name="twitter:description"
+      content="Qo‘lda tayyorlangan milliy kashtachilik buyumlari — MOHIGUL ATELIER."
+    />
+
+    <!-- TODO: PREVIEW IMAGE for Twitter -->
+    <meta name="twitter:image" content="./public/preview.png" />
+
+    <!-- ========================= -->
+    <!-- FAVICON                   -->
+    <!-- ========================= -->
+    <!-- TODO: LOGO URL KIRITING — masalan: /images/logo.png -->
+    <link rel="icon" type="image/png" href="./public/logo.png" />
+    <link rel="apple-touch-icon" href="./public/logo.png" />
+
+    <!-- ========================= -->
+    <!-- FONTS & ICONS             -->
+    <!-- ========================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- ========================================================= -->
+    <!-- STRUCTURED DATA → LocalBusiness (Google Rich Snippets)     -->
+    <!-- ========================================================= -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "MOHIGUL ATELIER",
+        "description": "Milliy kashtachilik buyumlari: suzani, kepkalar, milliy bosh kiyimlari, sumkalar va aksessuarlar.",
+        "url": "https://mohigulatelier.uz",
+        "logo": "",
+        "image": "",
+        "email": "moxigulidiyeva502@gmail.com",
+        "telephone": "+998907446205",
+        "sameAs": [
+          "https://t.me/+998907446205",
+          "https://www.instagram.com/moxigul_idiyeva"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "UZ",
+          "addressLocality": "Buxoro viloyati"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.814441",
+          "longitude": "64.440269"
+        },
+        "openingHours": "Mo-Sa 09:00-19:00",
+        "priceRange": "$$",
+        "brand": {
+          "@type": "Brand",
+          "name": "MOHIGUL ATELIER"
+        }
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Vite/React Entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
