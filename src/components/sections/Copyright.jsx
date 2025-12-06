@@ -1,6 +1,11 @@
+// src/components/footer/Copyright.jsx
 import { FaTelegramPlane, FaInstagram } from "react-icons/fa";
-import "../../assets/Copyright.css"
+import "../../assets/Copyright.css";
+import { useTranslation } from "react-i18next";
+
 const Copyright = () => {
+  const { t } = useTranslation();
+
   return (
     <div id="Copyright">
       <div className="container">
@@ -21,8 +26,14 @@ const Copyright = () => {
           </a>
         </div>
         <div className="link-to-copy">
-          <a href="https://t.me/buxoro_tadbirkorlar_klubi" target="_blank" rel="noopener noreferrer">© 2025 Buxoro tadbirkorlar biznes klubi</a>
-          <span>Biznesingizni biz bilan barpo eting</span>
+          <a
+            href="https://t.me/buxoro_tadbirkorlar_klubi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t("copy_line")}
+          </a>
+          <span>{t("copy_tagline")}</span>
         </div>
       </div>
     </div>

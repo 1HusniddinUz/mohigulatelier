@@ -1,7 +1,8 @@
+// src/pages/Marketplaces.jsx
 import React from "react";
 import "../assets/Marketplaces.css";
+import { useTranslation } from "react-i18next";
 
-// Rasmlarni o'zingdagi asset nomlariga moslab o'zgartirasan
 import uzumLogo from "../assets/images/marketplaces-icon/uzummarket.png";
 import ozonLogo from "../assets/images/marketplaces-icon/ozon.png";
 import yandexLogo from "../assets/images/marketplaces-icon/yandexmarket.png";
@@ -10,105 +11,87 @@ import wildberriesLogo from "../assets/images/marketplaces-icon/wb.png";
 const marketplaces = [
   {
     id: "uzum",
-    name: "UZUM MARKET",
-    description:
-      "Mahalliy xaridorlar uchun kashta naqshli kepkalar, sumkalar va aksessuarlar. Oson yetkazib berish va to‘lov.",
     image: uzumLogo,
     link: "https://uzum.uz/uz/product/ozbek-atlasidan-ayollar-kepkasi-ikat-2164097",
-    tag: "Faol joylashtirilgan",
+    tagKey: "mp_uzum_tag",
+    nameKey: "mp_uzum_name",
+    descKey: "mp_uzum_desc",
   },
   {
     id: "ozon",
-    name: "OZON",
-    description:
-      "Rossiya bozoriga yo‘naltirilgan kolleksiya: ayollar kepkalari va kundalik aksessuarlar uchun tayyor vitrina.",
     image: ozonLogo,
     link: "https://uz.ozon.com/product/sumka-3186635907/?oos_search=false",
-    tag: "Online do‘kon",
+    tagKey: "mp_ozon_tag",
+    nameKey: "mp_ozon_name",
+    descKey: "mp_ozon_desc",
   },
   {
     id: "yandex",
-    name: "YANDEX MARKET",
-    description:
-      "Sharqona kashtali kepkalar uchun alohida do‘kon sahifasi. Kepka va boshqa mahsulotlar bosqichma-bosqich joylashtiriladi.",
     image: yandexLogo,
-    link: "https://market.yandex.uz/card/zhenskaya-kepka-s-vyshivkoy-v-vostochnom-stile-stilnaya-kepka-iz-plotnogo-tekstilya-ukrashennaya-yarkoy-vostochnoy-vyshivkoy/4814382078?do-waremd5=BAW8wpOsuqQKs3KRSu7SNA&businessId=216503443&ogV=-7https://market.yandex.uz/business--husniddin/216503443?generalContext=t%3DshopInShop%3Bi%3D1%3Bbi%3D216503443%3B&rs=eJwzkn7ByPiJUZSDUWDhIVYJBo2eo6wa7189YNZYdYQVAH_UCdY%2C&searchContext=sins_ctx",
-    extraLink:
-      "https://market.yandex.uz/card/zhenskaya-kepka-s-vyshivkoy-v-vostochnom-stile-stilnaya-kepka-iz-plotnogo-tekstilya-ukrashennaya-yarkoy-vostochnoy-vyshivkoy/4814382078?do-waremd5=BAW8wpOsuqQKs3KRSu7SNA&businessId=216503443&ogV=-7",
-    tag: "Online do‘kon",
+    link: "https://market.yandex.uz/card/zhenskaya-kepka-s-vyshivkoy-v-vostochnom-stile-stilnaya-kepka-iz-plotnogo-tekstilya-ukrashennaya-yarkoy-vostochnoy-vyshivkoy/4814382078?do-waremd5=BAW8wpOsuqQKs3KRSu7SNA&businessId=216503443&ogV=-7",
+    tagKey: "mp_yandex_tag",
+    nameKey: "mp_yandex_name",
+    descKey: "mp_yandex_desc",
   },
   {
     id: "wildberries",
-    name: "WILDBERRIES",
-    description:
-      "Markaziy Osiyo va Rossiya xaridorlari uchun kapsul kolleksiya. Platformaga tayyorlanayotgan pozitsiyalar.",
     image: wildberriesLogo,
     link: "https://www.wildberries.ru/catalog/682102776/detail.aspx?targetUrl=GP",
-    tag: "Faol joylashtirilgan",
+    tagKey: "mp_wb_tag",
+    nameKey: "mp_wb_name",
+    descKey: "mp_wb_desc",
   },
 ];
 
 const Marketplaces = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="Marketplaces">
       <div className="marketplaces-container">
         <header className="marketplaces-header">
-          <p className="marketplaces-eyebrow">Online savdo maydonchalari</p>
-          <h1 className="marketplaces-title">
-            Kashta mahsulotlar qayerda sotiladi?
-          </h1>
-          <p className="marketplaces-subtitle">
-            Mohigulning kepkalari va aksessuarlari bir nechta yirik marketplace
-            platformalarida joylashtirilgan. Quyidagi sahifalar orqali
-            kolleksiyani ko‘rishingiz va buyurtma qilishingiz mumkin.
-          </p>
+          <p className="marketplaces-eyebrow">{t("mp_eyebrow")}</p>
+          <h1 className="marketplaces-title">{t("mp_title")}</h1>
+          <p className="marketplaces-subtitle">{t("mp_subtitle")}</p>
         </header>
 
         <div className="marketplaces-grid">
           {marketplaces.map((item) => (
             <article className="marketplace-card" key={item.id}>
               <div className="marketplace-logo">
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={t(item.nameKey)} />
               </div>
 
               <div className="marketplace-body">
                 <div className="marketplace-top">
-                  <h2>{item.name}</h2>
-                  {item.tag && (
-                    <span className="marketplace-tag">{item.tag}</span>
-                  )}
+                  <h2>{t(item.nameKey)}</h2>
+                  <span className="marketplace-tag">
+                    {t(item.tagKey)}
+                  </span>
                 </div>
 
-                <p className="marketplace-text">{item.description}</p>
+                <p className="marketplace-text">
+                  {t(item.descKey)}
+                </p>
 
                 <div className="marketplace-actions">
-                  {item.link !== "#" && (
+                  {item.link ? (
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-marketplace"
                     >
-                      Sahifaga o‘tish
+                      {t("mp_btn_goto")}
                     </a>
-                  )}
-
-                  {item.link === "#" && (
-                    <button className="btn-marketplace disabled" disabled>
-                      Tez orada
+                  ) : (
+                    <button
+                      className="btn-marketplace disabled"
+                      disabled
+                    >
+                      {t("mp_btn_soon")}
                     </button>
                   )}
-
-                  {/* {item.extraLink && (
-                    <a
-                      href={item.extraLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="marketplace-extra"
-                    >
-                      Kepka kartasini ko‘rish
-                    </a>
-                  )} */}
                 </div>
               </div>
             </article>

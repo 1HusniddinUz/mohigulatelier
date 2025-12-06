@@ -2,9 +2,12 @@ import { useState } from "react";
 import { FaTelegramPlane, FaInstagram } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "../../assets/Navbar.css";
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/logo.png";
+import { useTranslation } from "react-i18next";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
@@ -13,6 +16,22 @@ const Navbar = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  const handleLangChange = (e) => {
+    const newLang = e.target.value;
+    i18n.changeLanguage(newLang);
+  };
+
+  // i18n.language ba'zan "uz-UZ" bo‘lishi ham mumkin,
+  // shuning uchun boshlari bo‘yicha tekshiraman:
+  const currentLang = (() => {
+    const lng = i18n.language || "uz";
+    if (lng.startsWith("ru")) return "ru";
+    if (lng.startsWith("en")) return "en";
+    if (lng.startsWith("tr")) return "tr";
+    if (lng.startsWith("fr")) return "fr";
+    return "uz";
+  })();
 
   return (
     <nav className="navbar">
@@ -42,10 +61,16 @@ const Navbar = () => {
 
           <div className="nav-right">
             <div className="lang-provider">
-              <select>
-                <option value="uz">O'zbek</option>
-                <option value="ru">Русский</option>
-                <option value="en">English</option>
+              <select
+                id="select"
+                value={currentLang}
+                onChange={handleLangChange}
+              >
+                <option value="uz">🇺🇿 O&apos;zbek</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="fr">🇫🇷 Français</option>
               </select>
             </div>
 
@@ -73,7 +98,7 @@ const Navbar = () => {
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
-                Home
+                {t("home")}
               </NavLink>
             </li>
             <li>
@@ -84,7 +109,7 @@ const Navbar = () => {
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
-                Products
+                {t("products")}
               </NavLink>
             </li>
             <li>
@@ -95,7 +120,7 @@ const Navbar = () => {
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
-                Marketplaces
+                {t("marketplaces")}
               </NavLink>
             </li>
             <li>
@@ -106,7 +131,7 @@ const Navbar = () => {
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
-                About
+                {t("about")}
               </NavLink>
             </li>
             <li>
@@ -117,7 +142,7 @@ const Navbar = () => {
                   isActive ? "nav-link active" : "nav-link"
                 }
               >
-                Contact
+                {t("contact")}
               </NavLink>
             </li>
           </ul>

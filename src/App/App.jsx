@@ -1,3 +1,5 @@
+// src/App/App.jsx yoki src/App.jsx – qayerda bo'lsa
+
 import "./App.css";
 import Header from "../components/layout/Header";
 import { Routes, Route } from "react-router-dom";
@@ -8,8 +10,9 @@ import About from "../pages/About";
 import Contacts from "../pages/Contacts";
 import Footer from "../components/layout/Footer";
 
-
-const ContactPage = () => <div>Contact page</div>;
+// i18n bu yerda init qilinmaydi, faqat global faylda
+// Agar kerak bo'lsa, faqat shunchaki import qilinishi mumkin:
+// import "../i18n";  // lekin odatda main.jsx da qilinadi
 
 function App() {
   return (

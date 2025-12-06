@@ -1,9 +1,12 @@
-import React from "react";
+// src/pages/About.jsx
 import { Link } from "react-router-dom";
 import "../assets/About.css";
-import profileImg from "../assets/images/suzane.png"; // o'z rasm yo'lingni qo'y
+import profileImg from "../assets/images/suzane.png";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="AboutSection">
       <div className="about-container">
@@ -14,53 +17,33 @@ const About = () => {
 
         {/* RIGHT: TEXT */}
         <div className="about-content">
-          <p className="about-eyebrow">Kashtachilik va dizayn</p>
-          <h1 className="about-title">Hi, I&apos;m Idiyeva Mohigul.</h1>
+          <p className="about-eyebrow">{t("about_eyebrow")}</p>
+          <h1 className="about-title">{t("about_title")}</h1>
 
-          <p className="about-text">
-            I&apos;m a textile artist and embroidery designer who has been
-            working in kashtachilik since 2017. My work reimagines traditional
-            Uzbek embroidery for today&apos;s lifestyle – turning age-old
-            patterns into modern bags, caps, accessories and home pieces that
-            feel both familiar and refreshingly new.
-          </p>
-
-          <p className="about-text">
-            Every piece starts with a story: a memory from Bukhara, a classic
-            suzani motif, or a detail from everyday life. I carefully translate
-            these elements into minimal, wearable designs so that heritage
-            doesn&apos;t just stay in the chest at home, but walks with you in
-            your daily routine.
-          </p>
-
-          <p className="about-text">
-            Quality and meaning are at the heart of what I do. I work in small
-            batches, using hand embroidery and thoughtful construction so that
-            each product serves as both a functional object and a keepsake. My
-            goal is simple: to help you carry a piece of our culture with you,
-            in a quiet, elegant and contemporary way.
-          </p>
+          <p className="about-text">{t("about_p1")}</p>
+          <p className="about-text">{t("about_p2")}</p>
+          <p className="about-text">{t("about_p3")}</p>
 
           {/* ACTION BUTTONS */}
           <div className="about-actions">
             <Link to="/products" className="btn-primary">
-              Kolleksiyani ko‘rish
+              {t("about_btn_products")}
             </Link>
             <Link to="/contact" className="btn-secondary">
-              Murojaat qoldirish
+              {t("about_btn_contact")}
             </Link>
           </div>
 
           <p className="about-note">
-            Yangi ishlar va jarayonlarni{" "}
+            {t("about_note_text")}
             <a
               href="https://instagram.com/moxigul_idiyeva"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Instagram
+              {t("about_note_instagram")}
             </a>
-            da kuzatishingiz mumkin.
+            {t("about_note_suffix")}
           </p>
         </div>
       </div>

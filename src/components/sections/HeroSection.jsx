@@ -1,32 +1,37 @@
+// src/components/HeroSection/HeroSection.jsx (yo‘lini o‘zing moslashtirasan)
 import React from "react";
+import { NavLink } from "react-router-dom";
+import "../../assets/HeroSection.css";
+import { useTranslation } from "react-i18next";
+
 import img1 from "../../assets/images/sumka.png";
 import img2 from "../../assets/images/kepka.jpg";
 import img3 from "../../assets/images/suzane.png";
-import "../../assets/HeroSection.css";
-import { NavLink } from "react-router-dom";
-
-const MainImages = [
-  {
-    id: 1,
-    name: "AYOLLAR SUMKASI",
-    info: "Kashtadan tikilgan ayollar sumkasi",
-    image: img1,
-  },
-  {
-    id: 2,
-    name: "AYOLLAR KEPKASI",
-    info: "Kashta naqshli ayollar kepkasi",
-    image: img2,
-  },
-  {
-    id: 3,
-    name: "KASHTALI SUMKA",
-    info: "Kundalik uslubdagi kashtali sumka",
-    image: img3,
-  },
-];
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
+  const MainImages = [
+    {
+      id: 1,
+      image: img1,
+      nameKey: "hero_item1_name",
+      infoKey: "hero_item1_info",
+    },
+    {
+      id: 2,
+      image: img2,
+      nameKey: "hero_item2_name",
+      infoKey: "hero_item2_info",
+    },
+    {
+      id: 3,
+      image: img3,
+      nameKey: "hero_item3_name",
+      infoKey: "hero_item3_info",
+    },
+  ];
+
   return (
     <section id="HeroSection">
       <div className="container">
@@ -40,11 +45,11 @@ const HeroSection = () => {
             {MainImages.map((item) => (
               <div className="hero-card" key={item.id}>
                 <div className="hero-card-image">
-                  <img src={item.image} alt={item.name} />
+                  <img src={item.image} alt={t(item.nameKey)} />
                 </div>
                 <div className="hero-card-body">
-                  <h3>{item.name}</h3>
-                  <p>{item.info}</p>
+                  <h3>{t(item.nameKey)}</h3>
+                  <p>{t(item.infoKey)}</p>
                 </div>
               </div>
             ))}

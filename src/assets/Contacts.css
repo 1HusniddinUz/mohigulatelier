@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");  
 /* PAGE BACKGROUND */
 #Contacts {
   width: 100%;
@@ -192,7 +193,7 @@ textarea {
   font-family: "Cormorant Garamond", serif;
   text-transform: uppercase;
   align-self: flex-start;
-  background: #0F766E;
+  background: #0f766e;
   color: #f9fafb;
   border-radius: 999px;
   border: none;
@@ -208,7 +209,6 @@ textarea {
   background: #115e59;
   transform: translateY(-1px);
   box-shadow: 0 12px 24px rgba(15, 118, 110, 0.35);
-
 }
 
 .form-note {
@@ -247,7 +247,9 @@ textarea {
   border: 0;
   display: block;
 }
-
+#Contact h4 {
+  font-family: "Montserrat", sans-serif;
+}
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .contacts-layout {
